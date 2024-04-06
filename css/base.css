@@ -1,0 +1,142 @@
+/* frame css */
+:root {
+    --baseBg: #fff8ea;
+    --baseFontColor: #222222;
+    --whiteFontColor: #fff;
+    --typingFontColor: #ec303a;
+    --subtitleFontColor: #ffffff;
+    --navBorderColor: #22222233;
+    --navActiveColor: #f74a9b;
+}
+
+html {
+    font-size: 100%;
+}
+a {
+    color: var(--baseFontColor);
+    text-decoration: none;
+}
+body {
+    font-family: "Noto Serif KR", sans-serif, arial;
+    font-size: 16px;
+    color: var(--baseFontColor);
+}
+#wrap {
+    width: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+    min-height: 100%;
+    background-color: var(--baseBg);
+}
+h1 {
+    display: none;
+    width: 200px;
+    position: fixed;
+    z-index: 11;
+    top: 47px;
+    left: 50px;
+}
+/* header CSS [S} */
+
+#header {
+    display: none;
+    width: 100%;
+    position: fixed;
+    z-index: 10;
+    top: 40px;
+}
+.gnb {
+    width: 1200px;
+    height: 80px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    border: 2px solid var(--navBorderColor);
+    border-left: none;
+    border-right: none;
+}
+.gnb li {
+    width: 25%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.gnb li a {
+    position: relative;
+    font-size: 15px;
+}
+.gnb li.active {
+    border: 2px solid var(--navActiveColor);
+    border-left: none;
+    border-right: none;
+}
+.gnb li.active a {
+    color: var(--navActiveColor);
+}
+.gnb li.active a::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: -28.5px;
+    transform: translateY(-50%);
+    background: url(../images/main/navActiveicon.png) no-repeat 0 0 / cover;
+    width: 24px;
+    height: 24px;
+}
+#main {
+    width: 100%;
+    height: 100vh;
+}
+
+#blank {
+    width: 100%;
+    height: 200vh;
+}
+.section {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    z-index: 1;
+}
+#main .main-content {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+.content-body {
+    width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-start {
+    max-width: 180px;
+    padding: 14px 50px;
+    border-radius: 60px;
+    background: linear-gradient(270deg, #ec303a 0%, #d83b84 100%);
+    transition: all 5s ease;
+}
+.btn-start:hover {
+    background: linear-gradient(270deg, #f5525b 0%, #fa62a9 100%);
+}
+.btn-start span {
+    font-size: 20px;
+    color: var(--whiteFontColor);
+}
+/* tag css */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+video {
+    width: 100%;
+}

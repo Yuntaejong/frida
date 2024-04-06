@@ -1,0 +1,156 @@
+@charset "utf-8";
+
+@import url(./reset.css);
+@import url(./base.css);
+@import url(./fonts.css);
+
+
+#wrap {
+	width:100%;
+	height:100vh;
+	
+}
+
+#content-wrap {
+	width:100%;
+	height:100%;
+	background:url(../images/game/main-bg.png) no-repeat 0 0 / 100% 100vh;
+	background-color: rgba(0,0,0,.85);
+	background-blend-mode: multiply;
+}
+#start-page {
+	width:100%;
+	height:100vh;
+	text-align: center;
+	display:flex;
+	flex-direction: column;
+	align-items:center;
+	justify-content: center;
+	gap:40px;
+}
+#start-page #letter-wrap {
+	position:absolute;
+	left:50%;
+	top:30%;
+	transform: translateX(-50%);
+	background-image: url(../images/game/letter.png);
+	background-repeat: no-repeat;
+	background-size:100%;
+	background-position: 50% 50%;
+	width:11%;
+	height:110px;
+	animation: letterAni 3s linear infinite;
+	cursor: pointer;
+}
+@keyframes letterAni {
+	0% {background-image: url(../images/game/letter.png);}
+	50% {background-image: url(../images/game/letter_bright.png);}
+	100% {background-image: url(../images/game/letter.png);}
+}
+#start-page #letter-wrap.moveLetter {
+	animation:moveLetter 3s linear forwards;
+}
+@keyframes moveLetter {
+	0% {
+		left:50%;
+		top:30%;
+		
+	}
+	50% {
+		top:25%;
+		left:34%;
+		transform: rotate(-15deg);
+	}
+	100% {
+		left: 15%;
+		top: 61%;
+	}
+}
+#start-page .typing-effect {
+	font-family: "BookkMyungjo-Lt";
+	font-weight: 300;
+	color: var(--typingFontColor);
+	display: inline-flex;
+	border: 1px solid #ec303a;
+	border-left: none;
+	border-right: none;
+	padding: 4px 0;
+}
+#start-page .typing-effect .type-wrap {
+	border: 1px solid #ec303a80;
+	min-width: 60px;
+	height: 70px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+#start-page .typing-effect .type-wrap span {
+	font-size: clamp(1.75rem, 1.5769rem + 0.7692vw, 2.5rem);
+}
+#start-page .sub-title {
+	font-family: "Cafe24Shiningstar";
+	font-size: 28px;
+	color: var(--subtitleFontColor);
+	letter-spacing: 5px;
+}
+.fadeOut {
+	animation: fadeOut 3s linear forwards;
+}
+@keyframes fadeOut {
+	0% {opacity: 1;}
+	100% {opacity: 0;}
+}
+
+/* main-page */
+#main-page {
+	position: fixed;
+	display:none;
+	top:0;
+	left:0;
+	width:100%;
+	height:100vh;
+}
+#main-page #letter {
+	position:absolute;
+	left: 15%;
+	top: 61%;
+	transform: translateX(-50%);
+	background-image: url(../images/game/letter.png);
+	background-repeat: no-repeat;
+	background-size:100%;
+	background-position: 50% 50%;
+	width:11%;
+	height:110px;
+	cursor: pointer;
+	animation: letterAni 3s linear infinite;
+}
+
+#main-page #total-wrap {
+	position:absolute;
+	left:0;
+	top:5%;
+	width:190px;
+	height:140px;
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap:10px;
+	border:2px solid #983C41;
+	border-radius: 0 24px 24px 0;
+	background: url(../images/game/totalBg.png) no-repeat 0 0 / cover;
+	background-color: #BE4B51;
+	background-blend-mode: multiply;
+	color:#fff;
+	cursor: pointer;
+}
+#total-wrap .total-text {
+	font-family: 'SUIT-Regular';
+	font-weight: 700;
+	font-size: 20px;
+}
+#total-wrap #total {
+	font-family: 'SUITE-Regular';
+	font-weight: 800;
+	font-size:80px;
+}

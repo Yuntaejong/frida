@@ -1,0 +1,34 @@
+/* Introduce Page Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&display=swap");
+
+/* Game typing-effect */
+@font-face {
+    font-family: "BookkMyungjo-Lt";
+    src: url("https://cdn.jsdelivr.net/gh/fontbee/font@main/Rixfont/BookkMyungjo-Lt.woff2") format("woff2");
+    font-weight: 300;
+    font-style: normal;
+}
+
+/* Game sub-title */
+@font-face {
+    font-family: "Cafe24Shiningstar";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Shiningstar.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Game Total Letter */
+@font-face {
+    font-family: 'SUIT-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Game Total Number */
+@font-face {
+    font-family: 'SUITE-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}

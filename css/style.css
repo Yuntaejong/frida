@@ -1,0 +1,265 @@
+@charset "utf-8";
+
+@import url(./reset.css);
+@import url(./base.css);
+@import url(./fonts.css);
+
+/* 꽃 떨어지는 효과 */
+#main .flower-wrap {
+	width: 100%;
+	height: 100%;
+}
+@keyframes flower {
+	from {
+	}
+	to {
+	}
+}
+
+/* #main CSS [S] */
+#main .main-img {
+	position: absolute;
+	bottom: 0;
+}
+#main .scroll-left {
+	left: 0;
+	width: 45%;
+	transition: all 1s ease;
+	z-index: 1;
+}
+#main .scroll-right {
+	right: 0;
+	width: 62%;
+	transition: all 1s ease;
+	z-index: 1;
+}
+#main .scroll-up {
+	bottom: 10%;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 32%;
+	transition: all 1s ease;
+}
+
+/* #main CSS [E] */
+
+/* #section1 CSS [S] */
+
+/* #section1 [E] */
+
+/* #section2 CSS [S] */
+#section2 .img-wrap {
+	position: relative;
+	left:0;
+	bottom:0;
+	width:100%;
+	height: 100%;
+}
+#section2 .sec2-bg {
+	position: absolute;
+	bottom:0;
+}
+#section2 .frog-wrap {
+	min-width: 100px;
+	max-width: 380px;
+	width:20%;
+	position: absolute;
+	bottom: 10%;
+	left: -10%;
+	animation: frogAni 10s infinite linear;
+}
+@keyframes frogAni {
+	0% {
+		left:-10%;
+	}
+	100% {
+		left:110%;
+	}
+}
+/* #section2 [E] */
+
+/* #section3 CSS [S] */
+#section3 .writer-wrap {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+}
+#section3 .intro {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 80px;
+}
+#section3 .intro:first-child .writer-img::after {
+	content: "";
+	display: block;
+	background: url(../images/main/section3-writer_deco1.png) no-repeat 0 0 / cover;
+	width: 106px;
+	height: 137px;
+	position: absolute;
+	right: -55px;
+	top: -20px;
+	z-index: -1;
+}
+#section3 .intro:nth-child(2) .writer-img::before {
+	content: "";
+	display: block;
+	background: url(../images/main/section3-writer_deco2.png) no-repeat 0 0 / cover;
+	width: 120px;
+	height: 141px;
+	position: absolute;
+	left: -70px;
+	top: 35px;
+}
+#section3 .writer-img {
+	width: 160px;
+	position: relative;
+}
+#section3 .writer-desc {
+	font-size: 14px;
+	width: 700px;
+}
+#section3 .writer-desc dt {
+	font-size: 20px;
+	margin-bottom: 16px;
+}
+#section3 .writer-desc dt span {
+	font-size: 14px;
+}
+#section3 .writer-desc dd {
+	line-height: 1.4;
+}
+/* #section3 [E] */
+
+/* #section4 CSS [S] */
+#section4 .intro-wrapper {
+	height:100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+}
+#section4 .intro-wrap {
+	display: flex;
+	justify-content: space-between;
+}
+#section4 .book-wrap {
+	width: 350px;
+}
+#section4 .book-desc {
+	width: 850px;
+	font-weight: 500;
+}
+#section4 .book-desc p:first-child {
+	font-size: 24px;
+	line-height: 40px;
+}
+#section4 .book-desc p:last-child {
+	font-size: 16px;
+	line-height: 32px;
+}
+#section4 .deco-wrap {
+	position: relative;
+	width: 100%;
+	bottom: 0;
+}
+#section4 .sec4-deco1 {
+	width: 660px;
+	margin: 0 auto;
+}
+#section4 .sec4-deco2 {
+	position: absolute;
+	width: 90px;
+	left: 34%;
+	bottom: 52%;
+	z-index: -1;
+	animation: monkeyAni 3s infinite;
+}
+@keyframes monkeyAni {
+	0% {
+		bottom: 52%;
+	}
+	50% {
+		bottom: 66%;
+	}
+	100% {
+		bottom: 52%;
+	}
+}
+/* #section4 [E] */
+
+/* #section5 CSS [S] */
+/*#section5 .gameImg-wrap {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}*/
+#section5 .gameImg-wrap {
+	position: relative;
+	top: 60px;
+	width: 100%;
+	height: 675px;
+	background-image: url(../images/main/section5-gameImg.png);
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	background-size: cover;
+	background-color: rgba(0,0,0,.85);
+	background-blend-mode: multiply;
+	text-align: center;
+}
+#section5 .letterImg {
+	width: 160px;
+	height: 120px;
+	position: absolute;
+	left: 7%;
+	top: 60%;
+	background-image: url(../images/main/section5-letter.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 0 0;
+	/* animation: brightLetter 2s infinite; */
+}
+
+@keyframes brightLetter {
+	0% {
+		background-image: url(../images/main/section5-letter.png);
+	}
+	50% {
+		background-image: url(../images/main/section5-letter-shadow.png);
+	}
+	100% {
+		background-image: url(../images/main/section5-letter.png);
+	}
+}
+#section5 .typing-effect {
+	font-family: "BookkMyungjo-Lt";
+	font-weight: 300;
+	color: var(--typingFontColor);
+	display: inline-flex;
+	border: 1px solid #ec303a;
+	border-left: none;
+	border-right: none;
+	padding: 4px 0;
+	margin-top: 125px;
+}
+#section5 .typing-effect .type-wrap {
+	border: 1px solid #ec303a80;
+	min-width: 60px;
+	min-height: 70px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+#section5 .typing-effect .type-wrap span {
+	font-size: 40px;
+}
+#section5 .sub-title {
+	font-family: "Cafe24Shiningstar";
+	font-size: 28px;
+	color: var(--subtitleFontColor);
+	margin-top: 20px;
+	margin-bottom: 250px;
+	letter-spacing: 5px;
+}
+
+/* #section5 [E] */
