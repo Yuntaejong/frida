@@ -29,6 +29,8 @@
 				</div>
 			</div>
 			<div id="main-page">
+
+				<!-- 편지 쓰기 -->
                 <div id="letter"></div>
 
 				<div id="writer-letter">
@@ -50,7 +52,9 @@
 
 				<div id="writed-letter">
 					<div class="writed-wrap">
-						<div class="writed-img"><img src="./images/game/writer-pad1.png" alt="편지"></div>
+						<div class="writed-img">
+							<img src="./images/game/writer-pad1.png" alt="편지">
+						</div>
 						<div class="btn-wrap">
 							<a href="#" class="btn btn-modify">수정</a>
 							<a href="#" class="btn btn-save">저장</a>
@@ -59,102 +63,229 @@
 					</div>
 				</div>
 
+				<div id="send-letter">
+					<div class="send-letter-wrap">
+						<input class="letter-title" type="text" maxlength="12" placeholder="편지의 제목을 입력해주세요.">
+						<div class="change-sticker-wrap">
+							<img src="./images/game/sticker1.png" alt="편지스티커">
+						</div>
+						<div class="change-sticker">
+							<a href="#" class="prev-btn"><img src="./images/game/sticker-prev-btn.png" alt="이전 버튼"></a>
+							<a href="#" class="next-btn"><img src="./images/game/sticker-next-btn.png" alt="다음 버튼"></a>
+						</div>
+					</div>
+					<a href="#" class="btn btn-send">보내기</a>
+				</div>
+
+				<!-- 응모하기 -->
+				<div id="apply-wrap">
+					<div class="apply">
+						<div class="apply-title">
+							상상 속 친구와 깊은 우정을 나눈 친구들에게, <br>
+							두 명의 프리다 그림책을 선물로 드려요!
+						</div>
+						<div class="apply-info">
+							<ul>
+								<li>닉네임<input type="text" maxlength="6" placeholder="특수문자를 제외한 6자리"></li>
+								<li>이메일<input type="email" placeholder="이메일을 입력해 주세요."></li>
+								<li>전화번호<input type="number" placeholder="숫자만 입력해 주세요."></li>
+							</ul>
+						</div>
+						<div class="apply-desc">
+							<p>개인정보 수집 및 이용에 동의한 사람에 한해 이벤트가 진행됩니다.</p>
+							<small>(정보가 일치하지 않을 시, 이벤트 대상에서 제외될 수 있습니다.)</small>
+						</div>
+						<div class="apply-table">
+							<table>
+								<tr>
+									<td>수집 목적</td>
+									<td>수집 정보</td>
+									<td>보유 · 이용기간</td>
+								</tr>
+								<tr>
+									<td>이벤트 상품 제공 및 마케팅</td>
+									<td>닉네임, 이메일, 전화번호</td>
+									<td>입력일로부터 1년까지</td>
+								</tr>
+							</table>
+						</div>
+						<div class="apply-agree">
+							<label>
+								<input type="radio" name="r1" id="yes" value="yes">
+								<span>네, 동의합니다.</span>
+							</label>
+							<label>
+								<input type="radio" name="r1" id="no" value="no">
+								<span>동의하지 않습니다.</span>
+							</label>
+						</div>
+						<a href="#" id="confirm" class="btn btn-comfirm"><span class="text">확인</span></a>
+					</div>
+				</div>
+
+				<!-- 전체 편지 -->
                 <div id="total-wrap">
                     <span class="total-text">전체 편지</span>
                     <span id="total">50</span>
                 </div>
 
 				<div id="total-letter">
-					<div class="letter-grid">
-						<div class="letter-wrapper letter1">
-							<div class="letter-wrap"><img src="./images/game/totalLetter.png" alt="편지"></div>
-							<div class="sticker sticker1"><img src="./images/game/sticker1.png" alt="스티커"></div>
-							<span class="letter-name">와우프리다</span>
-							<span class="letter-title">프리다 여기는 봄날얌.</span>
+					<div class="total-letter-wrap">
+						<div class="letter-grid">
+							<div class="letter-wrapper letter1">
+								<div class="letter-wrap">
+									<img src="./images/game/totalLetter.png" alt="편지">
+								</div>
+								<div class="sticker sticker1">
+									<img src="./images/game/btn-sticker1.png" alt="스티커">
+								</div>
+								<span class="letter-name">와우프리다</span>
+								<span class="letter-title">프리다 여기는 봄날얌.</span>
+							</div>
+							<div class="letter-wrapper letter2">
+								<div class="letter-wrap">
+									<img src="./images/game/totalLetter.png" alt="편지">
+								</div>
+								<div class="sticker sticker1">
+									<img src="./images/game/btn-sticker1.png" alt="스티커">
+								</div>
+								<span class="letter-name">와우프리다</span>
+								<span class="letter-title">프리다 여기는 봄날얌.</span>
+							</div>
+							<div class="letter-wrapper letter3">
+								<div class="letter-wrap">
+									<img src="./images/game/totalLetter.png" alt="편지">
+								</div>
+								<div class="sticker sticker1">
+									<img src="./images/game/btn-sticker1.png" alt="스티커">
+								</div>
+								<span class="letter-name">와우프리다</span>
+								<span class="letter-title">프리다 여기는 봄날얌.</span>
+							</div>
+							<div class="letter-wrapper letter4">
+								<div class="letter-wrap">
+									<img src="./images/game/totalLetter.png" alt="편지">
+								</div>
+								<div class="sticker sticker1">
+									<img src="./images/game/btn-sticker1.png" alt="스티커">
+								</div>
+								<span class="letter-name">와우프리다</span>
+								<span class="letter-title">프리다 여기는 봄날얌.</span>
+							</div>
+							<div class="letter-wrapper letter5">
+								<div class="letter-wrap">
+									<img src="./images/game/totalLetter.png" alt="편지">
+								</div>
+								<div class="sticker sticker1">
+									<img src="./images/game/btn-sticker1.png" alt="스티커">
+								</div>
+								<span class="letter-name">와우프리다</span>
+								<span class="letter-title">프리다 여기는 봄날얌.</span>
+							</div>
+							<div class="letter-wrapper letter6">
+								<div class="letter-wrap">
+									<img src="./images/game/totalLetter.png" alt="편지">
+								</div>
+								<div class="sticker sticker1">
+									<img src="./images/game/btn-sticker1.png" alt="스티커">
+								</div>
+								<span class="letter-name">와우프리다</span>
+								<span class="letter-title">프리다 여기는 봄날얌.</span>
+							</div>
+							<div class="letter-wrapper letter7">
+								<div class="letter-wrap">
+									<img src="./images/game/totalLetter.png" alt="편지">
+								</div>
+								<div class="sticker sticker1">
+									<img src="./images/game/btn-sticker1.png" alt="스티커">
+								</div>
+								<span class="letter-name">와우프리다</span>
+								<span class="letter-title">프리다 여기는 봄날얌.</span>
+							</div>
+							<div class="letter-wrapper letter8">
+								<div class="letter-wrap">
+									<img src="./images/game/totalLetter.png" alt="편지">
+								</div>
+								<div class="sticker sticker1">
+									<img src="./images/game/btn-sticker1.png" alt="스티커">
+								</div>
+								<span class="letter-name">와우프리다</span>
+								<span class="letter-title">프리다 여기는 봄날얌.</span>
+							</div>
+							<div class="letter-wrapper letter9">
+								<div class="letter-wrap">
+									<img src="./images/game/totalLetter.png" alt="편지">
+								</div>
+								<div class="sticker sticker1">
+									<img src="./images/game/btn-sticker1.png" alt="스티커">
+								</div>
+								<span class="letter-name">와우프리다</span>
+								<span class="letter-title">프리다 여기는 봄날얌.</span>
+							</div>
+							<div class="letter-wrapper letter1">
+								<div class="letter-wrap">
+									<img src="./images/game/totalLetter.png" alt="편지">
+								</div>
+								<div class="sticker sticker1">
+									<img src="./images/game/btn-sticker1.png" alt="스티커">
+								</div>
+								<span class="letter-name">와우프리다</span>
+								<span class="letter-title">프리다 여기는 봄날얌.</span>
+							</div>
 						</div>
-						<div class="letter-wrapper letter2">
-							<div class="letter-wrap"><img src="./images/game/totalLetter.png" alt="편지"></div>
-							<div class="sticker sticker1"><img src="./images/game/sticker1.png" alt="스티커"></div>
-							<span class="letter-name">와우프리다</span>
-							<span class="letter-title">프리다 여기는 봄날얌.</span>
+					</div>
+					<div class="open-letter-wrap">
+						<div class="letter-rain">
+							<img src="./images/game/letter-rain.png" alt="떨어지는 편지">
+							<img src="./images/game/letter-rain.png" alt="떨어지는 편지">
+							<img src="./images/game/letter-rain.png" alt="떨어지는 편지">
+							<img src="./images/game/letter-rain.png" alt="떨어지는 편지">
+							<img src="./images/game/letter-rain.png" alt="떨어지는 편지">
+							<img src="./images/game/letter-rain.png" alt="떨어지는 편지">
+							<img src="./images/game/letter-rain.png" alt="떨어지는 편지">
+							<img src="./images/game/letter-rain.png" alt="떨어지는 편지">
 						</div>
-						<div class="letter-wrapper letter3">
-							<div class="letter-wrap"><img src="./images/game/totalLetter.png" alt="편지"></div>
-							<div class="sticker sticker1"><img src="./images/game/sticker1.png" alt="스티커"></div>
-							<span class="letter-name">와우프리다</span>
-							<span class="letter-title">프리다 여기는 봄날얌.</span>
+						<div class="open-letter">
+							<img src="./images/game/open-letter.png" alt="편지">
 						</div>
-						<div class="letter-wrapper letter4">
-							<div class="letter-wrap"><img src="./images/game/totalLetter.png" alt="편지"></div>
-							<div class="sticker sticker1"><img src="./images/game/sticker1.png" alt="스티커"></div>
-							<span class="letter-name">와우프리다</span>
-							<span class="letter-title">프리다 여기는 봄날얌.</span>
-						</div>
-						<div class="letter-wrapper letter5">
-							<div class="letter-wrap"><img src="./images/game/totalLetter.png" alt="편지"></div>
-							<div class="sticker sticker1"><img src="./images/game/sticker1.png" alt="스티커"></div>
-							<span class="letter-name">와우프리다</span>
-							<span class="letter-title">프리다 여기는 봄날얌.</span>
-						</div>
-						<div class="letter-wrapper letter6">
-							<div class="letter-wrap"><img src="./images/game/totalLetter.png" alt="편지"></div>
-							<div class="sticker sticker1"><img src="./images/game/sticker1.png" alt="스티커"></div>
-							<span class="letter-name">와우프리다</span>
-							<span class="letter-title">프리다 여기는 봄날얌.</span>
-						</div>
-						<div class="letter-wrapper letter7">
-							<div class="letter-wrap"><img src="./images/game/totalLetter.png" alt="편지"></div>
-							<div class="sticker sticker1"><img src="./images/game/sticker1.png" alt="스티커"></div>
-							<span class="letter-name">와우프리다</span>
-							<span class="letter-title">프리다 여기는 봄날얌.</span>
-						</div>
-						<div class="letter-wrapper letter8">
-							<div class="letter-wrap"><img src="./images/game/totalLetter.png" alt="편지"></div>
-							<div class="sticker sticker1"><img src="./images/game/sticker1.png" alt="스티커"></div>
-							<span class="letter-name">와우프리다</span>
-							<span class="letter-title">프리다 여기는 봄날얌.</span>
-						</div>
-						<div class="letter-wrapper letter9">
-							<div class="letter-wrap"><img src="./images/game/totalLetter.png" alt="편지"></div>
-							<div class="sticker sticker1"><img src="./images/game/sticker1.png" alt="스티커"></div>
-							<span class="letter-name">와우프리다</span>
-							<span class="letter-title">프리다 여기는 봄날얌.</span>
-						</div>
-						<div class="letter-wrapper letter1">
-							<div class="letter-wrap"><img src="./images/game/totalLetter.png" alt="편지"></div>
-							<div class="sticker sticker1"><img src="./images/game/sticker1.png" alt="스티커"></div>
-							<span class="letter-name">와우프리다</span>
-							<span class="letter-title">프리다 여기는 봄날얌.</span>
-						</div>
+						<a href="#" class="total-prev-btn"><img src="./images/game/total-prev-btn.png" alt="뒤로가기"></a>
 					</div>
 					<a href="#" class="close-btn"><img src="./images/game/close-btn.png" alt="닫기 버튼"></a>
 				</div>
 
+				<!-- 최신 편지 6통 -->
                 <div id="current-letter">
 					<div class="letter recentletter1">
 						<div class="name"><span>와우프리다</span></div>
-						<img src="./images/game/sticker1.png" alt="">
+						<div class="sticker-wrap"><img src="./images/game/btn-sticker1.png" alt=""></div>
 					</div>
 					<div class="letter recentletter2">
 						<div class="name"><span>와우프리다</span></div>
-						<img src="./images/game/sticker2.png" alt="">
+						<div class="sticker-wrap"><img src="./images/game/btn-sticker2.png" alt=""></div>
 					</div>
 					<div class="letter recentletter3">
 						<div class="name"><span>와우프리다</span></div>
-						<img src="./images/game/sticker3.png" alt="">
+						<div class="sticker-wrap"><img src="./images/game/btn-sticker3.png" alt=""></div>
 					</div>
 					<div class="letter recentletter4">
 						<div class="name"><span>와우프리다</span></div>
-						<img src="./images/game/sticker4.png" alt="">
+						<div class="sticker-wrap"><img src="./images/game/btn-sticker4.png" alt=""></div>
 					</div>
 					<div class="letter recentletter5">
 						<div class="name"><span>와우프리다</span></div>
-						<img src="./images/game/sticker5.png" alt="">
+						<div class="sticker-wrap"><img src="./images/game/btn-sticker5.png" alt=""></div>
 					</div>
 					<div class="letter recentletter6">
 						<div class="name"><span>와우프리다</span></div>
-						<img src="./images/game/sticker1.png" alt="">
+						<div class="sticker-wrap"><img src="./images/game/btn-sticker1.png" alt=""></div>
 					</div>
+				</div>
+
+				<div class="current-letter-wrap">
+					<div class="open-current-letter">
+						<img src="./images/game/open-current-letter.png" alt="편지">
+					</div>
+					<a href="#" class="close-btn"><img src="./images/game/close-btn.png" alt="닫기 버튼"></a>
 				</div>
             </div>
 		</div>

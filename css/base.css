@@ -163,6 +163,18 @@ h1 {
 	font-size:32px;
 	padding:12px 80px;
 }
+.btn-send {
+	background-color: var(--whiteBg);
+	color:var(--redFontColor);
+	font-size: 32px;
+	padding:16px 130px; 
+}
+.btn-comfirm {
+	background-color: var(--redBg);
+	color:var(--whiteFontColor);
+	font-size: 24px;
+	padding:10px 100px; 
+}
 /* tag css */
 img {
 	max-width: 100%;

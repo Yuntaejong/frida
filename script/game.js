@@ -46,30 +46,36 @@ letterElements.forEach(function(letterElement) {
     
 	// 해당 숫자에 따라 배경색을 설정합니다.
 	var nameElement = letterElement.querySelector('.name');
+	var stickerElement = letterElement.querySelector('.sticker-wrap');
 	switch (parseInt(number)) {
 		case 1:
 			nameElement.style.backgroundColor = '#FF8AC0';
 			nameElement.style.boxShadow = '0 0 16px #FF8AC0CC';
+			stickerElement.style.boxShadow = '0 0 16px #FF8AC0CC';
 			break;
 
 		case 2:
 			nameElement.style.backgroundColor = '#17BEDA';
 			nameElement.style.boxShadow = '0 0 16px #17BEDACC';
+			stickerElement.style.boxShadow = '0 0 16px #17BEDACC';
 			break;
 
 		case 3:
 			nameElement.style.backgroundColor = '#FFEB4E';
 			nameElement.style.boxShadow = '0 0 16px #FFEB4ECC';
+			stickerElement.style.boxShadow = '0 0 16px #FFEB4ECC';
 			break;
 
 		case 4:
 			nameElement.style.backgroundColor = '#FF7550';
 			nameElement.style.boxShadow = '0 0 16px #FF7550CC';
+			stickerElement.style.boxShadow = '0 0 16px #FF7550CC';
 			break;
 
 		case 5:
 			nameElement.style.backgroundColor = '#8AD63E';
 			nameElement.style.boxShadow = '0 0 16px #8AD63ECC';
+			stickerElement.style.boxShadow = '0 0 16px #8AD63ECC';
 			break;
 		// 필요한 만큼 추가합니다.
 		default:
@@ -80,23 +86,26 @@ letterElements.forEach(function(letterElement) {
 //편지쓰기
 
 	const letter = document.getElementById('letter');
-	const total = document.getElementById('total-wrap');
-	const totalLetter = document.getElementById('total-letter');
 	const writerLetter = document.getElementById('writer-letter');
 	const writedLetter = document.getElementById('writed-letter');
+	const sendLetter = document.getElementById('send-letter');
 	const letterPad = document.querySelector('.writer-pad');
 	const letterPadImg = document.querySelector('.writer-pad img');
+	const stickerImg = document.querySelector('.change-sticker-wrap img');
 
 	//버튼
 	const completeBtn1 = document.querySelector('.btn-wrap .btn-complete');
 	const completeBtn2 = document.querySelector('.btn-complete2');
 	const saveBtn = document.querySelector('.btn-save');
 	const modifyBtn = document.querySelector('.btn-modify');
-	const closeBtn = document.querySelector('.close-btn');
+	const sendBtn = document.querySelector('.btn-send');
 
-	const prevBtn = document.querySelector('.prev-btn');
-	const nextBtn = document.querySelector('.next-btn');
+	const decoPrevBtn = document.querySelector('.change-pad .prev-btn');
+	const decoNextBtn = document.querySelector('.change-pad  .next-btn');
+	const stickerPrevBtn = document.querySelector('#send-letter .prev-btn');
+	const stickerNextBtn = document.querySelector('#send-letter .next-btn');
 
+	//
 	letter.addEventListener('click',()=>{
 		writerLetter.style.display = 'block';
 	});
@@ -107,17 +116,18 @@ letterElements.forEach(function(letterElement) {
 	});
 	completeBtn1.addEventListener('click',()=>{
 		writedLetter.style.display = 'none';
+		sendLetter.style.display = 'flex';
 	});
 
 	//편지지 바꾸기
 	let n = 1;
 
-	prevBtn.addEventListener('click',()=>{
+	decoPrevBtn.addEventListener('click',()=>{
 		moveLeft();
 		return false;
 	});
 
-	nextBtn.addEventListener('click',()=>{
+	decoNextBtn.addEventListener('click',()=>{
 		moveRight();
 		return false;
 	});
@@ -140,12 +150,114 @@ letterElements.forEach(function(letterElement) {
 		letterPadImg.src=`./images/game/writer-pad${n}.png`
 	}
 
+	//스티커 바꾸기
+	let j = 1;
+
+	stickerPrevBtn.addEventListener('click',()=>{
+		changeLeft();
+		return false;
+	});
+
+	stickerNextBtn.addEventListener('click',()=>{
+		changeRight();
+		return false;
+	});
+
+	function changeLeft() {
+		if(j==1) {
+			j=5;
+		} else {
+			j--;
+		}
+		stickerImg.src=`./images/game/sticker${j}.png`
+	}
+
+	function changeRight() {
+		if(j==5) {
+			j=1;
+		} else {
+			j++;
+		}
+		stickerImg.src=`./images/game/sticker${j}.png`
+	}
+
+// 전체 편지
+const total = document.getElementById('total-wrap');
+const totalLetterWrap = document.querySelector('.total-letter-wrap');
+const totalLetter = document.getElementById('total-letter');
+const closedLetters = document.querySelectorAll('.letter-wrapper');
+const openLetter = document.querySelector('.open-letter-wrap');
+const letterRainElements = document.querySelectorAll('.letter-rain > *');
+
+// 최신 편지
+const currentLetters = document.querySelectorAll('.letter');
+const currentLetterWrap = document.querySelector('.current-letter-wrap');
+
+//버튼
+const closeBtns = document.querySelectorAll('.close-btn');
+const totalPrevBtn = document.querySelector('.total-prev-btn');
+
+
 	total.addEventListener('click',()=>{
 		totalLetter.style.display = 'block';
+		totalLetterWrap.style.display = 'block';
 	});
 
-	closeBtn.addEventListener('click',()=>{
-		totalLetter.style.display = 'none';
+	closeBtns.forEach(function(closeBtn){
+		closeBtn.addEventListener('click',()=>{
+			totalLetter.style.display = 'none';
+			currentLetterWrap.style.display = 'none';
+			letterRainElements.forEach(function(element){
+				element.classList.remove('rain');
+			});
+		});
 	});
 
 
+	closedLetters.forEach(function(wrapper){
+		wrapper.addEventListener('click',()=>{
+			openLetter.style.display = 'flex';
+			totalLetterWrap.style.display = 'none';
+			setTimeout(()=>{
+				letterRainElements.forEach(function(element){
+					element.classList.add('rain');
+				});
+			},100);
+		});
+	});
+
+	totalPrevBtn.addEventListener('click',()=>{
+		openLetter.style.display = 'none';
+		totalLetterWrap.style.display = 'block';
+		letterRainElements.forEach(function(element){
+			element.classList.remove('rain');
+		});
+	});
+
+	currentLetters.forEach(function(letter){
+		letter.addEventListener('click',()=>{
+			currentLetterWrap.style.display= 'flex';
+		});
+	});
+
+//CheckBox 
+	const inputAgree = document.getElementById('yes');
+	const inputNotAgree = document.getElementById('no');
+	const comfirmBtn = document.getElementById('confirm');
+
+	const handleRadioClick = () => {
+		if(inputAgree.checked){
+			comfirmBtn.innerText = "확인";
+			comfirmBtn.style.opacity = 1;
+		} else if (inputNotAgree.checked) {
+			comfirmBtn.innerText = "종료";
+			comfirmBtn.style.opacity = 1;
+		}
+	}
+
+	inputAgree.addEventListener('click', handleRadioClick);
+	inputNotAgree.addEventListener('click', handleRadioClick);
+
+	comfirmBtn.addEventListener('click',()=>{
+		history.scrollRestoration = "manual";
+	});
