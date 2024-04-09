@@ -89,6 +89,7 @@ letterElements.forEach(function(letterElement) {
 	const writerLetter = document.getElementById('writer-letter');
 	const writedLetter = document.getElementById('writed-letter');
 	const sendLetter = document.getElementById('send-letter');
+	const applyModal = document.getElementById('apply-wrap');
 	const letterPad = document.querySelector('.writer-pad');
 	const letterPadImg = document.querySelector('.writer-pad img');
 	const stickerImg = document.querySelector('.change-sticker-wrap img');
@@ -117,6 +118,11 @@ letterElements.forEach(function(letterElement) {
 	completeBtn1.addEventListener('click',()=>{
 		writedLetter.style.display = 'none';
 		sendLetter.style.display = 'flex';
+	});
+
+	sendBtn.addEventListener('click',()=>{
+		sendLetter.style.display = 'none';
+		applyModal.style.display = 'flex';
 	});
 
 	//편지지 바꾸기
@@ -258,6 +264,6 @@ const totalPrevBtn = document.querySelector('.total-prev-btn');
 	inputAgree.addEventListener('click', handleRadioClick);
 	inputNotAgree.addEventListener('click', handleRadioClick);
 
-	comfirmBtn.addEventListener('click',()=>{
-		history.scrollRestoration = "manual";
+	comfirmBtn.addEventListener('click',(event)=>{
+		location.reload();
 	});
