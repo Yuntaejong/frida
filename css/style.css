@@ -5,15 +5,53 @@
 @import url(./fonts.css);
 
 /* 꽃 떨어지는 효과 */
-#main .flower-wrap {
+#flower-wrap {
+	position: fixed;
+	left:0; top:0;
 	width: 100%;
 	height: 100%;
 }
-@keyframes flower {
+#flower-wrap > * {
+	position: absolute;
+	top:-10%;
+	animation: rotateflower infinite, flowerfall infinite ease;
+}
+#flower-wrap img:first-child {
+	left:15%;
+	animation-duration: 15s;
+}
+#flower-wrap img:nth-child(2) {
+	left:30%;
+	animation-duration: 20s;
+}
+#flower-wrap img:nth-child(3) {
+	left:45%;
+	animation-duration: 18s;
+}
+#flower-wrap img:nth-child(4) {
+	left:60%;
+	animation-duration: 23s;
+}
+#flower-wrap img:nth-child(5) {
+	left:75%;
+	animation-duration: 21s;
+}
+#flower-wrap img:last-child {
+	left:90%;
+	animation-duration: 17s;
+}
+@keyframes flowerfall {
 	from {
+		top:-10%;
 	}
 	to {
+		top:110%;
 	}
+}
+@keyframes rotateflower {
+	0% {rotate:0deg;}
+	50% {rotate:30deg;}
+	100% {rotate:0deg;}
 }
 
 /* #main CSS [S] */
@@ -74,6 +112,28 @@
 	}
 	100% {
 		left:110%;
+	}
+}
+
+#section2 .monkey-wrap {
+	min-width: 80px;
+	max-width: 170px;
+	width:5%;
+	position: absolute;
+	bottom: 17%;
+	left: 78%;
+	rotate:-15deg;
+	animation: monkeyAni1 3s infinite;
+}
+@keyframes monkeyAni1 {
+	0% {
+		bottom: 17%;
+	}
+	50% {
+		bottom: 24%;
+	}
+	100% {
+		bottom: 17%;
 	}
 }
 /* #section2 [E] */
@@ -172,9 +232,9 @@
 	left: 34%;
 	bottom: 52%;
 	z-index: -1;
-	animation: monkeyAni 3s infinite;
+	animation: monkeyAni2 3s infinite;
 }
-@keyframes monkeyAni {
+@keyframes monkeyAni2 {
 	0% {
 		bottom: 52%;
 	}
@@ -252,7 +312,78 @@
 }
 #section5 .typing-effect .type-wrap span {
 	font-size: 40px;
+	opacity: 0;
+	/* animation: typingEffect 12s linear infinite;
+	animation-duration: 1s; */
 }
+#section5 .typing-effect .type-wrap span.show {
+	opacity: 1;
+	transition: opacity .5s ease-in-out;
+}
+
+/* #section5 .typing-effect .type-wrap:nth-child(1) span {
+	animation-delay: 1s;
+}
+
+#section5 .typing-effect .type-wrap:nth-child(2) span {
+	animation-delay: 2s;
+}
+
+#section5 .typing-effect .type-wrap:nth-child(3) span {
+	animation-delay:3s;
+}
+
+#section5 .typing-effect .type-wrap:nth-child(4) span {
+	animation-delay:4s;
+}
+
+#section5 .typing-effect .type-wrap:nth-child(5) span {
+	animation-delay:5s;
+}
+
+#section5 .typing-effect .type-wrap:nth-child(6) span {
+	animation-delay:6s;
+}
+
+#section5 .typing-effect .type-wrap:nth-child(7) span {
+	animation-delay:7s;
+}
+
+#section5 .typing-effect .type-wrap:nth-child(8) span {
+	animation-delay:8s;
+}
+
+#section5 .typing-effect .type-wrap:nth-child(9) span {
+	animation-delay:9s;
+}
+
+#section5 .typing-effect .type-wrap:nth-child(10) span {
+	animation-delay: 10s;
+}
+
+#section5 .typing-effect .type-wrap:nth-child(11) span {
+	animation-delay: 11s;
+}
+
+#section5 .typing-effect .type-wrap:nth-child(12) span {
+	animation-delay: 12s;
+}
+@keyframes typingEffect {
+	0% { opacity: 0; }
+	8.33% { opacity: 1; } 
+	16.67% { opacity: 1; } 
+	25% { opacity: 1; } 
+	33.33% { opacity: 1; } 
+	41.67% { opacity: 1; } 
+	50% { opacity: 1; } 
+	58.33% { opacity: 1; } 
+	66.67% { opacity: 1; } 
+	75% { opacity: 1; } 
+	83.33% { opacity: 1; }
+	91.67% { opacity: 1; }
+	100% { opacity: 0; } 
+} */
+
 #section5 .sub-title {
 	font-family: "Cafe24Shiningstar";
 	font-size: 28px;
