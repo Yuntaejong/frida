@@ -77,6 +77,7 @@ h1 a {
 	align-items: center;
 	justify-content: center;
 }
+.gnb li:first-child {display:none;}
 .gnb li a {
 	position: relative;
 	font-size: clamp(0.75rem, 0.7067rem + 0.1923vw, 0.9375rem);
@@ -103,30 +104,6 @@ h1 a {
 .hambuger {
 	display:none;
 }
-@media screen and (max-width:1600px) {
-	h1 {
-		left:3%;
-		width:60%;
-		max-width: 170px;
-	}
-}
-@media screen and (min-width:768px) and (max-width:1200px) {
-	h1 {
-		top:65px;
-		left:30px;
-		width:25%;
-		max-width: 100px;
-	}
-}
-
-@media screen and (max-width:767px) {
-	.hambuger {
-		display:block;
-	}
-	.hambuger span {
-		
-	}
-}
 
 #main {
 	width: 100%;
@@ -149,10 +126,11 @@ h1 a {
 	position: fixed;
 	left: 0;
 	top: 0;
+	z-index: 2;
 }
 .content-body {
 	max-width: 1200px;
-	width:70%;
+	width:60%;
 	height: 100%;
 	margin: 0 auto;
 	display: flex;
@@ -165,7 +143,7 @@ h1 a {
 	padding: 14px 50px;
 	border-radius: 60px;
 	background: linear-gradient(270deg, #ec303a 0%, #d83b84 100%);
-	transition: all 5s ease;
+	transition: background 5s ease;
 }
 .btn-start:hover {
 	background: linear-gradient(270deg, #f5525b 0%, #fa62a9 100%);
@@ -219,4 +197,186 @@ img {
 
 video {
 	width: 100%;
+}
+@media screen and (max-width:1600px) {
+	h1 {
+		left:3%;
+		width:60%;
+		max-width: 170px;
+	}
+}
+@media screen and (min-width:768px) and (max-width:1200px) {
+	h1 {
+		top:65px;
+		left:30px;
+		width:25%;
+		max-width: 100px;
+	}
+}
+
+@media screen and (max-width:767px) {
+	h1 {
+		top:40px;
+		left:20px;
+		width:35%;
+	}
+	#header {
+		backdrop-filter: none;
+	}
+	.hambuger {
+		display:block;
+		width:40px;
+		height: 40px;
+		position: absolute;
+		right:40px;
+		top:40px;
+		padding:10px;
+		z-index: 1;
+	}
+	.hambuger input {
+		cursor: pointer;
+		position: absolute;
+		left:50%;
+		top:50%;
+		transform: translate(-50%,-50%);
+		width:40px;
+		height: 40px;
+		opacity: 0;
+	}
+	#header .hambuger::before, #header .hambuger::after {
+		display:block;
+		position: absolute;
+		content:'';
+		width:40px;
+		height:3px;
+		border-radius: 1px;
+		background-color: #080404;
+		transform: rotate(0deg);
+		transform-origin: center center;
+	}
+	#header .hambuger::before {
+		top:40%;			
+		animation:gnb-bar-up-reverse 0.6s;		
+	}
+	#header .hambuger::after {
+		bottom:40%;
+		animation:gnb-bar-down-reverse 0.6s;
+	}
+
+	#header .hambuger.active::before {
+		top: 50%;
+		transform: rotate(-45deg);
+		animation:gnb-bar-up 0.6s;
+	}
+	#header .hambuger.active::after {
+		bottom: 45%;
+		transform: rotate(45deg);
+		animation:gnb-bar-down 0.6s;
+	}
+	@keyframes gnb-bar-down {
+		0% {
+			bottom: 40%;
+			transform: rotate(0deg);
+		}
+		50% {
+			bottom: 45%;
+			transform: rotate(0deg);
+		}
+		100% {
+			bottom: 45%;
+			transform: rotate(45deg);
+		}
+	}
+
+	@keyframes gnb-bar-up {
+		0% {
+			top: 40%;
+			transform: rotate(0deg);
+		}
+		50% {
+			top: 50%;
+			transform: rotate(0deg);
+		}
+		100% {
+			top: 50%;
+			transform: rotate(-45deg);
+		}
+	}
+
+	@keyframes gnb-bar-down-reverse {
+		0% {
+			bottom: 50%;
+			transform: rotate(45deg);
+		}
+		50% {
+			bottom: 50%;
+			transform: rotate(0deg);
+		}
+		100% {
+			bottom: 40%;
+			transform: rotate(0deg);
+		}
+	}
+
+	@keyframes gnb-bar-up-reverse {
+		0% {
+			top: 50%;
+			transform: rotate(-45deg);
+		}
+		50% {
+			top: 50%;
+			transform: rotate(0deg);
+		}
+		100% {
+			top: 40%;
+			transform: rotate(0deg);
+		}
+	}
+	.gnb {
+		display:flex;
+		width:1%;
+		height: 0;
+		overflow: hidden;
+		margin:0;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		background-color: #FFA8D1;
+		gap:40px;
+		border-bottom-left-radius: 100vh;
+		position: fixed;
+		right:-10px;
+		top:0;
+		transition: all .6s cubic-bezier(.645,.045,.355,1);
+	}
+	.gnb.active {
+		width:100%;
+		height: 100vh;
+		border-bottom-left-radius: 0;
+		right:0px;
+	}
+	.gnb li:first-child {
+		display:block;
+		border:none;
+		text-align: center;
+	}
+	.gnb li:first-child img {
+		margin:0 auto;
+		scale: .5;
+	}
+	.gnb li {
+		width:70%;
+		margin:0 auto;
+		height:10%;
+		border-top:4px solid #22222220;
+		border-bottom:1px solid #22222220; 
+	}
+	.gnb li a {
+		font-size: 15px;
+	}
+	.content-body {
+		max-width: none;
+		width:100%;
+	}
+	
 }
