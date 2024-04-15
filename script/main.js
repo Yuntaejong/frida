@@ -156,6 +156,16 @@ document.addEventListener("DOMContentLoaded", function() {
 		window.addEventListener("scroll", handScroll);
 	}
 
+	mobileSize();
+
+	function mobileSize(){
+		const body = document.querySelector('body');
+		var realSize = window.innerWidth;
+		body.style.width = realSize;
+		console.log("디바이스 실사이즈:"+realSize);
+		console.log("디바이스 실사이즈:"+body.style.width);
+	}
+
 	
 	const navInput = document.querySelector('.hambuger input');
 	const hambuger = document.querySelector('.hambuger');
@@ -174,30 +184,40 @@ document.addEventListener("DOMContentLoaded", function() {
 			
 		}
 	});	
-});
 
-
-//타이핑 효과
-const typeWraps = document.querySelectorAll('.type-wrap');
-
-function showNextSpan(typeWrapIndex, spanIndex) {
-	if (typeWrapIndex < typeWraps.length) {
-		const spans = typeWraps[typeWrapIndex].querySelectorAll('span');
-		if (spanIndex < spans.length) {
-			setTimeout(() => {
-				spans[spanIndex].classList.add('show');
-				showNextSpan(typeWrapIndex, spanIndex + 1);
-			}, 500); // 1초 후에 다음 span 보이기
+	//타이핑 효과
+	const TypeWraps = document.querySelectorAll('.type-wrap');
+	function showNextSpan(typeWrapIndex, spanIndex) {
+		TypeWraps[0].querySelector('span').classList.add('show');
+		if (typeWrapIndex < TypeWraps.length) {
+			const spans = TypeWraps[typeWrapIndex].querySelectorAll('span');
+			if (spanIndex < spans.length) {
+				setTimeout(() => {
+					spans[spanIndex].classList.add('show');
+					showNextSpan(typeWrapIndex, spanIndex + 1);
+				},100); // 0.3초 후에 다음 span 보이기
+			} else {
+				// 현재 type-wrap의 모든 span이 보여지면 다음 type-wrap으로 이동
+				setTimeout(() => {
+					showNextSpan(typeWrapIndex + 1, 0);
+				}, 300);
+			}
 		} else {
-			// 현재 type-wrap의 모든 span이 보여지면 다음 type-wrap으로 이동
-			showNextSpan(typeWrapIndex + 1, 0);
+			// 모든 type-wrap을 보여준 후에 모든 span의 show 클래스 제거
+			TypeWraps.forEach(typeWrap => {
+				const spans = typeWrap.querySelectorAll('span');
+				spans.forEach(span => {
+					setTimeout(() => {
+						span.classList.remove('show');
+					}, 500);
+				});
+			});
+			// 애니메이션이 다시 시작되도록 호출
+			showNextSpan(0, 0);
 		}
 	}
 
-	if(typeWrapIndex == typeWraps.length) {
-		const spans = typeWraps[typeWrapIndex].querySelectorAll('span');
-		spans[spanIndex].classList.remove('show');
-	}
-}
+	showNextSpan(0, 0); // 페이지 로딩 후 첫 번째 type-wrap과 첫 번째 span부터 시작
+});
 
-showNextSpan(0, 0); // 페이지 로딩 후 첫 번째 type-wrap과 첫 번째 span부터 시작
+

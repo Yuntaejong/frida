@@ -260,8 +260,7 @@
 }
 #section3 .writer-img {
 	max-width: 160px;
-	width:40%;
-	min-width:120px;
+	min-width:160px;
 	position: relative;
 }
 #section3 .writer-desc {
@@ -332,26 +331,31 @@
 	font-weight: 500;
 }
 #section4 .book-desc p:first-child {
-	font-size: 24px;
+	font-size: clamp(1.125rem, 0.875rem + 0.5208vw, 1.5rem);
 	line-height: 40px;
 }
 #section4 .book-desc p:last-child {
-	font-size: 16px;
+	font-size: clamp(0.75rem, 0.5833rem + 0.3472vw, 1rem);
 	line-height: 32px;
 }
 #section4 .deco-wrap {
 	position: relative;
 	width: 100%;
+	height: 40%;
 	bottom: 0;
 }
 #section4 .sec4-deco1 {
-	width: 660px;
-	margin: 0 auto;
+	max-width: 660px;
+	width: 100%;
+	position: absolute;
+	left: 50%;
+	bottom: 0;
+	transform: translateX(-50%);
 }
 #section4 .sec4-deco2 {
 	position: absolute;
 	width: 90px;
-	left: 34%;
+	left: 22%;
 	bottom: 52%;
 	z-index: -1;
 	animation: monkeyAni2 3s infinite;
@@ -426,32 +430,33 @@
 /* #section4 [E] */
 
 /* #section5 CSS [S] */
-#section5 .gameImg-wrap {
+#section5 .pcver {
 	position: relative;
-	top: 60px;
 	width: 100%;
-	max-height: 675px;
+}
+#section5 .gameImg-wrap {
+	width:100%;
 	height:auto;
-	aspect-ratio: 2/1.2;
-	background-image: url(../images/main/section5-gameImg.png);
-	background-repeat: no-repeat;
-	background-position: 0 0;
-	background-size: cover;
-	background-color: rgba(0,0,0,.85);
-	background-blend-mode: multiply;
-	text-align: center;
+}
+#section5 .gameImg-wrap img {
+	filter: brightness(.2);
 }
 #section5 .letterImg {
-	width: 160px;
-	height: 120px;
+	max-width: 160px;
+	min-width: 80px;
+	width:15%;
+	max-height: 100px;
+	min-height: 40px;
+	height:15%;
 	position: absolute;
 	left: 7%;
-	top: 60%;
+	top: 63%;
 	background-image: url(../images/main/section5-letter.png);
 	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: 0 0;
-	/* animation: brightLetter 2s infinite; */
+	background-size: 100%;
+	background-position: 50% 50%;
+	animation: brightLetter 2s infinite;
+	transform-origin: 50% 50%;
 }
 
 @keyframes brightLetter {
@@ -466,6 +471,10 @@
 	}
 }
 #section5 .typing-effect {
+	position: absolute;
+	top:20%;
+	left:50%;
+	transform: translateX(-50%);
 	font-family: "BookkMyungjo-Lt";
 	font-weight: 300;
 	color: var(--typingFontColor);
@@ -474,7 +483,6 @@
 	border-left: none;
 	border-right: none;
 	padding: 4px 0;
-	margin-top: 125px;
 }
 #section5 .typing-effect .type-wrap {
 	border: 1px solid #ec303a80;
@@ -485,88 +493,45 @@
 	justify-content: center;
 }
 #section5 .typing-effect .type-wrap span {
-	font-size: 40px;
+	font-size: clamp(1.75rem, 1.25rem + 1.0417vw, 2.5rem);
 	opacity: 0;
-	/* animation: typingEffect 12s linear infinite;
-	animation-duration: 1s; */
 }
 #section5 .typing-effect .type-wrap span.show {
 	opacity: 1;
 	transition: opacity .5s ease-in-out;
 }
 
-/* #section5 .typing-effect .type-wrap:nth-child(1) span {
-	animation-delay: 1s;
-}
-
-#section5 .typing-effect .type-wrap:nth-child(2) span {
-	animation-delay: 2s;
-}
-
-#section5 .typing-effect .type-wrap:nth-child(3) span {
-	animation-delay:3s;
-}
-
-#section5 .typing-effect .type-wrap:nth-child(4) span {
-	animation-delay:4s;
-}
-
-#section5 .typing-effect .type-wrap:nth-child(5) span {
-	animation-delay:5s;
-}
-
-#section5 .typing-effect .type-wrap:nth-child(6) span {
-	animation-delay:6s;
-}
-
-#section5 .typing-effect .type-wrap:nth-child(7) span {
-	animation-delay:7s;
-}
-
-#section5 .typing-effect .type-wrap:nth-child(8) span {
-	animation-delay:8s;
-}
-
-#section5 .typing-effect .type-wrap:nth-child(9) span {
-	animation-delay:9s;
-}
-
-#section5 .typing-effect .type-wrap:nth-child(10) span {
-	animation-delay: 10s;
-}
-
-#section5 .typing-effect .type-wrap:nth-child(11) span {
-	animation-delay: 11s;
-}
-
-#section5 .typing-effect .type-wrap:nth-child(12) span {
-	animation-delay: 12s;
-}
-@keyframes typingEffect {
-	0% { opacity: 0; }
-	8.33% { opacity: 1; } 
-	16.67% { opacity: 1; } 
-	25% { opacity: 1; } 
-	33.33% { opacity: 1; } 
-	41.67% { opacity: 1; } 
-	50% { opacity: 1; } 
-	58.33% { opacity: 1; } 
-	66.67% { opacity: 1; } 
-	75% { opacity: 1; } 
-	83.33% { opacity: 1; }
-	91.67% { opacity: 1; }
-	100% { opacity: 0; } 
-} */
-
 #section5 .sub-title {
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translateX(-50%);
 	font-family: "Cafe24Shiningstar";
-	font-size: 28px;
+	font-size: clamp(1.25rem, 0.9167rem + 0.6944vw, 1.75rem);
 	color: var(--subtitleFontColor);
-	margin-top: 20px;
-	margin-bottom: 250px;
 	letter-spacing: 5px;
+	text-wrap:nowrap;
+}
+#section5 .btn-start {
+	position: absolute;
+	left:50%;
+	top:80%;
+	transform: translateX(-50%);
 }
 #section5 .mobilever {display:none;}
+@media screen and (min-width:1400px) and (max-width:1600px){
+	#section5 .typing-effect {
+		scale: .7;
+		transform-origin: 0 0 ;
+	}
+}
+@media screen and (min-width:768px) and (max-width:1400px) {
+	#section5 .typing-effect {
+		scale: .5;
+		transform-origin: 0 0 ;
+	}
+}
+
 @media screen and (max-width:767px) {
 	#section5 .pcver {display:none;}
 	#section5 .mobilever {
@@ -621,9 +586,6 @@
 		background-size: cover;
 		background-position: 0 0;
 		animation: brightLetter 2s infinite;
-	}
-	#section5 .gameImg img {
-		filter: brightness(0.2);
 	}
 }
 
