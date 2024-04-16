@@ -148,10 +148,22 @@ function handScroll_m() {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
+	
+	const navInput = document.querySelector('.hambuger input');
+	const hambuger = document.querySelector('.hambuger');
+	const gnb = document.querySelector('.gnb');
+	const gnbItems = document.querySelectorAll('.gnb li a');
 
 	// 실행
 	if(document.body.clientWidth < 768 ) {
 		window.addEventListener("scroll", handScroll_m);
+		gnbItems.forEach(function(item) {
+			item.addEventListener('click', function() {
+				navInput.checked = false;
+				gnb.classList.remove('active');
+				hambuger.classList.remove('active');
+			});
+		});
 	} else {
 		window.addEventListener("scroll", handScroll);
 	}
@@ -167,9 +179,6 @@ document.addEventListener("DOMContentLoaded", function() {
 	}
 
 	
-	const navInput = document.querySelector('.hambuger input');
-	const hambuger = document.querySelector('.hambuger');
-	const gnb = document.querySelector('.gnb');
 	navInput.addEventListener('change',function(){
 		if(this.checked) {
 			gnb.classList.add('active');

@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<title>나의 상상 속 친구에게</title>
 	<link rel="stylesheet" href="./css/game.css" type="text/css">
 </head>
 <body>
@@ -28,16 +28,17 @@
 					<div class="type-wrap"><span>게</span></div>
 				</div>
 			</div>
+
 			<div id="main-page">
 
 				<!-- 편지 쓰기 -->
-                <div id="letter"></div>
+				<div id="letter"></div>
 
 				<div id="writer-letter">
 					<div class="letter-wrapper">
 						<div class="letter-back"><img src="./images/game/open-letter-back.png" alt="편지 뒤 이미지"></div>
 						<div class="writerpad-wrapper">
-							<textarea name="" id="letter-contents" cols="9" rows="8"></textarea>
+							<textarea name="" id="letter-contents" cols="9" rows="8" maxlength="200"></textarea>
 							<div class="writer-pad"><img src="./images/game/writer-pad1.png" alt="편지지"></div>
 						</div>
 						<div class="letter-front"><img src="./images/game/open-letter-front.png" alt="편지 앞 이미지"></div>
@@ -86,9 +87,9 @@
 						</div>
 						<div class="apply-info">
 							<ul>
-								<li>닉네임<input type="text" maxlength="6" placeholder="특수문자를 제외한 6자리"></li>
-								<li>이메일<input type="email" placeholder="이메일을 입력해 주세요."></li>
-								<li>전화번호<input type="number" placeholder="숫자만 입력해 주세요."></li>
+								<li><span>닉네임</span><input type="text" maxlength="6" placeholder="특수문자를 제외한 6자리"></li>
+								<li><span>이메일</span><input type="email" placeholder="이메일을 입력해 주세요."></li>
+								<li><span>전화번호</span><input type="number" placeholder="숫자만 입력해 주세요."></li>
 							</ul>
 						</div>
 						<div class="apply-desc">
@@ -124,10 +125,10 @@
 				</div>
 
 				<!-- 전체 편지 -->
-                <div id="total-wrap">
-                    <span class="total-text">전체 편지</span>
-                    <span id="total">50</span>
-                </div>
+				<div id="total-wrap">
+					<span class="total-text">전체 편지</span>
+					<span id="total">50</span>
+				</div>
 
 				<div id="total-letter">
 					<div class="total-letter-wrap">
@@ -254,7 +255,7 @@
 				</div>
 
 				<!-- 최신 편지 6통 -->
-                <div id="current-letter">
+				<div id="current-letter">
 					<div class="letter recentletter1">
 						<div class="name"><span>와우프리다</span></div>
 						<div class="sticker-wrap"><img src="./images/game/btn-sticker1.png" alt=""></div>
@@ -287,7 +288,7 @@
 					</div>
 					<a href="#" class="close-btn"><img src="./images/game/close-btn.png" alt="닫기 버튼"></a>
 				</div>
-            </div>
+			</div>
 		</div>
 	</div>
 </body>
@@ -295,5 +296,5 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 
-    <script defer src="./script/game.js"></script>
+	<script defer src="./script/game.js"></script>
 </html>

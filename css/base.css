@@ -211,7 +211,7 @@ img {
 video {
 	width: 100%;
 }
-@media screen and (max-width:1600px) {
+@media screen and (max-width:1600px) and (min-width:1201px){
 	h1 {
 		left:3%;
 	}
@@ -224,12 +224,17 @@ video {
 }
 
 @media screen and (max-width:767px) {
-	/* h1 {
-		top:40px;
-		left:20px;
-	} */
+	h1 {
+		width:30%;
+		top:7%;
+	}
+	h1 a {
+		width:80%;
+		max-width: none;
+	}
 	#header {
 		backdrop-filter: none;
+		height:80px;
 	}
 	.hambuger {
 		display:block;
@@ -247,8 +252,8 @@ video {
 		left:50%;
 		top:50%;
 		transform: translate(-50%,-50%);
-		width:40px;
-		height: 40px;
+		width:60px;
+		height: 60px;
 		opacity: 0;
 	}
 	#header .hambuger::before, #header .hambuger::after {
@@ -387,4 +392,18 @@ video {
 		width:100%;
 	}
 	
+	/* Mobile Button */
+		.btn {
+			padding:1.5% 8%;
+			font-size: clamp(0.75rem, 0.5289rem + 0.9828vw, 1rem);
+		}
+		.btn-send {
+			font-size: clamp(1.25rem, 1.0289rem + 0.9828vw, 1.5rem);
+			padding:3% 20%; 
+		}
+		.btn-comfirm {
+			font-size: clamp(1rem, 0.7789rem + 0.9828vw, 1.25rem);
+			padding:2% 20%; 
+		}
+
 }

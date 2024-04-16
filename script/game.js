@@ -255,9 +255,11 @@ const totalPrevBtn = document.querySelector('.total-prev-btn');
 		if(inputAgree.checked){
 			comfirmBtn.innerText = "확인";
 			comfirmBtn.style.opacity = 1;
+			comfirmBtn.style.visibility = 'visible';
 		} else if (inputNotAgree.checked) {
 			comfirmBtn.innerText = "종료";
 			comfirmBtn.style.opacity = 1;
+			comfirmBtn.style.visibility = 'visible';
 		}
 	}
 
